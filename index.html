@@ -97,7 +97,10 @@
       align-items: center;
       gap: 10px;
       text-decoration: none;
+      transition: transform 0.4s var(--ease);
     }
+
+    .nav-logo:hover { transform: translateY(-1px); }
 
     .nav-dot-grid {
       width: 28px;
@@ -107,11 +110,42 @@
       gap: 3px;
       align-items: center;
       justify-items: center;
+      transition: gap 0.4s var(--ease);
     }
+
+    .nav-logo:hover .nav-dot-grid { gap: 2px; }
 
     .nav-dot {
       border-radius: 50%;
       background: var(--gradient);
+      animation: dotPulse 4s ease-in-out infinite;
+      transition: transform 0.4s var(--ease);
+    }
+
+    .nav-logo:hover .nav-dot {
+      transform: scale(1.18);
+      animation-play-state: paused;
+    }
+
+    /* Staggered ripple across the 3x3 grid */
+    .nav-dot:nth-child(1) { animation-delay: 0s; }
+    .nav-dot:nth-child(2) { animation-delay: 0.18s; }
+    .nav-dot:nth-child(3) { animation-delay: 0.36s; }
+    .nav-dot:nth-child(4) { animation-delay: 0.18s; }
+    .nav-dot:nth-child(5) { animation-delay: 0.36s; }
+    .nav-dot:nth-child(6) { animation-delay: 0.54s; }
+    .nav-dot:nth-child(7) { animation-delay: 0.36s; }
+    .nav-dot:nth-child(8) { animation-delay: 0.54s; }
+    .nav-dot:nth-child(9) { animation-delay: 0.72s; }
+
+    /* Breathe via scale so each dot keeps its designed opacity */
+    @keyframes dotPulse {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.12); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .nav-dot { animation: none; }
     }
 
     .nav-logo-text {
@@ -119,7 +153,10 @@
       font-weight: 700;
       color: var(--navy);
       letter-spacing: -0.02em;
+      transition: letter-spacing 0.4s var(--ease);
     }
+
+    .nav-logo:hover .nav-logo-text { letter-spacing: -0.005em; }
 
     .nav-links {
       display: flex;
@@ -195,6 +232,16 @@
       background-size: 56px 56px;
       mask-image: radial-gradient(ellipse 90% 70% at 70% 40%, #000 30%, transparent 75%);
       -webkit-mask-image: radial-gradient(ellipse 90% 70% at 70% 40%, #000 30%, transparent 75%);
+      animation: gridDrift 40s linear infinite;
+    }
+
+    @keyframes gridDrift {
+      from { background-position: 0 0, 0 0; }
+      to   { background-position: 56px 56px, 56px 56px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bg { animation: none; }
     }
 
     .hero-blob {
@@ -210,6 +257,7 @@
       background: radial-gradient(circle, rgba(91,79,214,0.22), transparent 70%);
       top: -140px;
       right: -80px;
+      animation: drift1 24s ease-in-out infinite;
     }
 
     .hero-blob-2 {
@@ -218,9 +266,26 @@
       background: radial-gradient(circle, rgba(61,139,245,0.16), transparent 70%);
       bottom: -80px;
       right: 240px;
+      animation: drift2 30s ease-in-out infinite;
     }
 
     .hero-blob-3 { display: none; }
+
+    @keyframes drift1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%      { transform: translate(-26px, 22px) scale(1.05); }
+      66%      { transform: translate(18px, -16px) scale(0.97); }
+    }
+
+    @keyframes drift2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      40%      { transform: translate(24px, -20px) scale(1.06); }
+      75%      { transform: translate(-16px, 14px) scale(0.96); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-blob-1, .hero-blob-2 { animation: none; }
+    }
 
     .hero-eyebrow {
       display: inline-flex;
