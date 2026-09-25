@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On Record: Q2 2026 | Based Audio</title>
+  <meta name="description" content="What actually moved the numbers for artists on Sahaya in Q2 2026. 28.1M streams, 34 releases, anonymised and measured.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#000007">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      
+      --black: #000007;
+      --raise: #0b0b14;
+      --line: rgba(242, 239, 233, 0.12);
+      --line-strong: rgba(242, 239, 233, 0.24);
+      --paper: #f2efe9;
+      --muted: #a09eaa;
+      --faint: #6d6b78;
+      --cyan: #00e1ff;      /* Zone Four */
+      --magenta: #fa38d0;   /* Jamilah */
+      --blue: #00b4ff;      /* Based Audio electric blue */
+
+      --display: 'Big Shoulders Display', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+      --body: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+      --gutter: clamp(20px, 5vw, 72px);
+      --maxw: 1240px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    body {
+      background: var(--black);
+      color: var(--paper);
+      font-family: var(--body);
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--paper); color: var(--black); }
+
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    strong { font-weight: 500; color: var(--paper); }
+
+    :focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background .3s ease, border-color .3s ease, height .3s ease;
+    }
+    nav.scrolled {
+      height: 62px;
+      background: rgba(0, 0, 7, 0.82);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      border-bottom-color: var(--line);
+    }
+    .nav-inner {
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-dot-grid {
+      width: 26px;
+      height: 26px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      place-items: center;
+    }
+    .nav-dot { border-radius: 50%; background: var(--paper); }
+    .nav-logo-text {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] { color: var(--paper); }
+    .nav-links a[aria-current="page"] {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 6px;
+    }
+    .nav-cta {
+      color: var(--black) !important;
+      background: var(--paper);
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-weight: 500 !important;
+    }
+    .nav-cta:hover { background: #ffffff; }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line-strong);
+      color: var(--paper);
+      font: 500 14px var(--body);
+      padding: 7px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      padding: 128px 0 64px;
+      overflow: hidden;
+    }
+    .hero::before {
+      /* faint glow echoing the ring on the one-sheets */
+      content: "";
+      position: absolute;
+      width: 90vmax;
+      height: 90vmax;
+      right: -38vmax;
+      top: -30vmax;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 180, 255, 0.10) 0%, rgba(250, 56, 208, 0.05) 35%, transparent 62%);
+      pointer-events: none;
+    }
+    .hero .wrap { position: relative; width: 100%; }
+    .hero-kicker {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .hero-title {
+      font-family: var(--display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(56px, 9.2vw, 150px);
+      line-height: 0.86;
+      letter-spacing: -0.005em;
+    }
+    .hero-title .line { display: block; }
+    .hero-title .line-2 { color: transparent; -webkit-text-stroke: 1.5px var(--paper); }
+
+    .signal {
+      display: block;
+      width: 100%;
+      height: 64px;
+      margin: 36px 0 40px;
+      overflow: visible;
+    }
+    .signal path {
+      fill: none;
+      stroke: url(#signalGrad);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .hero-foot {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 48px;
+      align-items: end;
+    }
+    .hero-sub {
+      max-width: 58ch;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .hero-sub strong { color: var(--paper); }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font: 500 15px/1 var(--body);
+      padding: 16px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background .25s ease, color .25s ease, border-color .25s ease;
+      cursor: pointer;
+    }
+    .btn-solid { background: var(--paper); color: var(--black); border: 1px solid var(--paper); }
+    .btn-solid:hover { background: #ffffff; }
+    .btn-line { color: var(--paper); border: 1px solid var(--line-strong); background: transparent; }
+    .btn-line:hover { border-color: var(--paper); }
+
+    .hero-proof {
+      border-left: 1px solid var(--line-strong);
+      padding-left: 24px;
+      justify-self: end;
+      max-width: 340px;
+    }
+    .hero-proof-num {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+    .hero-proof-num span { color: var(--faint); font-weight: 500; }
+    .hero-proof p {
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    /* ---------- SECTION BASICS ---------- */
+    section { position: relative; }
+    .section-pad { padding: clamp(96px, 12vw, 160px) 0; }
+    .rule { border-top: 1px solid var(--line); }
+    .h2 {
+      font-family: var(--display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(48px, 7vw, 104px);
+      line-height: 0.9;
+      letter-spacing: 0;
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 48px;
+      align-items: end;
+      margin-bottom: clamp(48px, 7vw, 88px);
+    }
+    .section-intro {
+      color: var(--muted);
+      max-width: 50ch;
+      font-size: 18px;
+    }
+
+    /* ---------- HOW IT WORKS (tracklist) ---------- */
+    .tracklist { list-style: none; border-top: 1px solid var(--line-strong); }
+    .track {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr) minmax(0, 1.35fr);
+      gap: 32px;
+      padding: 36px 0 40px;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+    .track-no {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 28px;
+      color: var(--faint);
+      font-variant-numeric: tabular-nums;
+    }
+    .track-title {
+      font-family: var(--display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(34px, 3.6vw, 48px);
+      line-height: 0.95;
+    }
+    .track-desc { color: var(--muted); max-width: 54ch; }
+
+    .aside-line {
+      margin-top: 40px;
+      color: var(--faint);
+      font-size: 15px;
+    }
+
+    /* ---------- CASE STUDIES ---------- */
+    .case {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(32px, 6vw, 88px);
+      align-items: center;
+      padding: clamp(56px, 7vw, 96px) 0;
+      border-top: 1px solid var(--line);
+    }
+    .case:first-of-type { border-top: 0; padding-top: 0; }
+    .case--flip .case-art { order: 2; }
+    .case-art img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+    .case--zf { --tone: var(--cyan); }
+    .case--jm { --tone: var(--magenta); }
+
+    .case-context {
+      font-size: 15px;
+      color: var(--tone);
+      margin-bottom: 14px;
+    }
+    .case-name {
+      font-family: var(--display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(56px, 7vw, 96px);
+      line-height: 0.88;
+      margin-bottom: 36px;
+    }
+    .case-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 32px;
+    }
+    .stat { padding: 20px 16px 22px 0; }
+    .stat + .stat { padding-left: 18px; border-left: 1px solid var(--line); }
+    .stat-value {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(36px, 3.6vw, 52px);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-label {
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+    .case-copy p { color: var(--muted); margin-bottom: 16px; max-width: 56ch; }
+    .case-quote {
+      margin-top: 28px;
+      padding-left: 20px;
+      border-left: 2px solid var(--tone);
+      font-size: 19px;
+      line-height: 1.5;
+      font-weight: 400;
+      color: var(--paper);
+      max-width: 44ch;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      gap: clamp(40px, 7vw, 112px);
+      align-items: start;
+    }
+    .contact-lede {
+      margin-top: 28px;
+      color: var(--muted);
+      max-width: 44ch;
+      font-size: 18px;
+    }
+    .contact-links {
+      margin-top: 44px;
+      border-top: 1px solid var(--line);
+    }
+    .contact-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .contact-link span:first-child { color: var(--faint); }
+    a.contact-link:hover span:last-child { text-decoration: underline; text-underline-offset: 4px; }
+
+    .form {
+      background: var(--raise);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: clamp(24px, 3.5vw, 40px);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .field { margin-bottom: 20px; }
+    .field label {
+      display: block;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--paper);
+      margin-bottom: 8px;
+    }
+    .field .opt { color: var(--faint); }
+    .input {
+      width: 100%;
+      font: 300 16px/1.4 var(--body);
+      color: var(--paper);
+      background: var(--black);
+      border: 1px solid var(--line-strong);
+      border-radius: 4px;
+      padding: 13px 14px;
+      transition: border-color .2s ease;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .input::placeholder { color: var(--faint); }
+    .input:hover { border-color: rgba(242, 239, 233, 0.4); }
+    .input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(0, 180, 255, 0.18); }
+    select.input {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23a09eaa' stroke-width='1.5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+    }
+    select.input option { background: var(--raise); color: var(--paper); }
+    textarea.input { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 8px;
+      font: 500 16px/1 var(--body);
+      color: var(--black);
+      background: var(--paper);
+      border: 0;
+      border-radius: 999px;
+      padding: 18px 24px;
+      cursor: pointer;
+      transition: background .25s ease;
+    }
+    .form-submit:hover { background: #ffffff; }
+    .form-submit:disabled { opacity: .7; cursor: default; }
+    .form-submit.is-sent { background: var(--cyan); }
+    .form-status {
+      min-height: 22px;
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--muted);
+      text-align: center;
+    }
+    .form-small {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--faint);
+      text-align: center;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 36px 0 48px;
+      font-size: 14px;
+      color: var(--faint);
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px 32px;
+    }
+    .footer-inner strong { color: var(--paper); font-weight: 500; }
+    .footer-list { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 980px) {
+      .hero-foot, .section-head, .contact-grid { grid-template-columns: 1fr; }
+      .hero-proof { justify-self: start; }
+      .case, .case--flip { grid-template-columns: 1fr; }
+      .case--flip .case-art { order: 0; }
+      .case-art { max-width: 560px; }
+      .track { grid-template-columns: 52px minmax(0, 1fr); }
+      .track-desc { grid-column: 2; }
+    }
+    @media (max-width: 760px) {
+      .nav-toggle { display: inline-block; }
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 8px var(--gutter) 20px;
+        background: rgba(0, 0, 7, 0.96);
+        border-bottom: 1px solid var(--line);
+        display: none;
+      }
+      nav.open .nav-links { display: flex; }
+      nav.open { background: rgba(0, 0, 7, 0.96); }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 14px 0; font-size: 16px; }
+      .nav-cta { display: inline-block !important; margin-top: 8px; padding: 12px 20px !important; }
+      .hero { padding-bottom: 56px; }
+      .hero-title .line-2 { -webkit-text-stroke-width: 1px; }
+      .signal { height: 44px; margin: 28px 0 32px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .stat { padding-right: 8px; }
+      .stat + .stat { padding-left: 10px; }
+      .stat-label { font-size: 12px; }
+    }
+  </style>
+  <style>
+    /* ---------- ON RECORD ADDITIONS ---------- */
+    .nav-links { gap: 26px; }
+
+    .hero-record { align-items: flex-end; }
+    .hero-record .hero-title { font-size: clamp(56px, 9.2vw, 150px); }
+    .hero-record .hero-sub { margin-top: 36px; max-width: 62ch; }
+    .hero-figures {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 48px;
+      border-top: 1px solid var(--line-strong);
+    }
+    .hero-figures > div { padding: 22px 20px 0 0; }
+    .hero-figures > div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+    .fig {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(44px, 5.4vw, 80px);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .fig-label { margin-top: 8px; font-size: 14px; color: var(--muted); }
+
+    .trust {
+      margin-top: 44px;
+      max-width: 70ch;
+      font-size: 14px;
+      color: var(--faint);
+      padding-left: 16px;
+      border-left: 1px solid var(--line-strong);
+    }
+
+    /* Quarter in numbers */
+    .ledger {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--line-strong);
+    }
+    .ledger > div {
+      padding: 28px 24px 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .ledger > div:not(:nth-child(3n+1)) { padding-left: 24px; border-left: 1px solid var(--line); }
+    .ledger .fig { font-size: clamp(40px, 4.4vw, 64px); }
+
+    /* Findings */
+    .finding {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      gap: clamp(32px, 6vw, 96px);
+      padding: clamp(56px, 7vw, 96px) 0;
+      border-top: 1px solid var(--line);
+      align-items: start;
+    }
+    .finding:first-of-type { border-top: 0; padding-top: 0; }
+    .finding-no { font-size: 15px; color: var(--faint); margin-bottom: 16px; }
+    .finding-title {
+      font-family: var(--display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: 0.92;
+    }
+    .finding-body p { color: var(--muted); margin-bottom: 16px; max-width: 58ch; }
+    .finding-body p strong { font-weight: 500; }
+
+    .figs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--line-strong);
+      margin-top: 28px;
+    }
+    .figs > div { padding: 20px 16px 20px 0; border-bottom: 1px solid var(--line); }
+    .figs > div:nth-child(2n) { padding-left: 20px; border-left: 1px solid var(--line); }
+    .figs .fig { font-size: clamp(36px, 3.8vw, 54px); }
+    .figs .fig-label { font-size: 13px; line-height: 1.45; }
+    .figs--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .figs--3 > div:nth-child(2n) { padding-left: 0; border-left: 0; }
+    .figs--3 > div + div { padding-left: 18px !important; border-left: 1px solid var(--line) !important; }
+
+    .up { color: var(--cyan); }
+    .down { color: var(--magenta); }
+
+    /* Bar charts */
+    .bars { margin-top: 32px; }
+    .bars-title { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+    .bar-row { margin-bottom: 16px; }
+    .bar-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+    .bar-meta span:last-child { font-variant-numeric: tabular-nums; color: var(--muted); }
+    .bar-track { height: 10px; background: rgba(242, 239, 233, 0.06); border-radius: 2px; overflow: hidden; }
+    .bar-fill { height: 100%; background: var(--paper); border-radius: 2px; }
+    .bar-fill--dim { background: var(--faint); }
+    .bar-fill--cyan { background: var(--cyan); }
+    .bar-fill--magenta { background: var(--magenta); }
+
+    .signals { list-style: none; border-top: 1px solid var(--line-strong); }
+    .signals li {
+      display: flex; justify-content: space-between; gap: 16px;
+      padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 15px;
+    }
+    .signals .lvl { color: var(--muted); text-align: right; }
+    .signals .lvl-high { color: var(--cyan); }
+    .signals .lvl-noise { color: var(--magenta); }
+
+    /* Myths */
+    .myths { list-style: none; border-top: 1px solid var(--line-strong); }
+    .myth {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+      gap: 32px;
+      padding: 30px 0 34px;
+      border-bottom: 1px solid var(--line);
+    }
+    .myth-claim {
+      font-family: var(--display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(30px, 3.2vw, 44px);
+      line-height: 0.98;
+      color: var(--muted);
+      text-decoration: line-through;
+      text-decoration-color: var(--magenta);
+      text-decoration-thickness: 3px;
+    }
+    .myth p { color: var(--muted); max-width: 56ch; }
+
+    /* Takeaways */
+    .takeaway-quote {
+      font-family: var(--display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(40px, 5.6vw, 84px);
+      line-height: 0.95;
+      max-width: 18ch;
+      margin-bottom: clamp(48px, 6vw, 80px);
+    }
+    .takeaway-quote .outline { color: transparent; -webkit-text-stroke: 1.5px var(--paper); }
+    .do-list { list-style: none; counter-reset: none; border-top: 1px solid var(--line-strong); }
+    .do-list li {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+      gap: 32px;
+      padding: 26px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .do-list h3 { font-size: 20px; font-weight: 500; line-height: 1.35; }
+    .do-list p { color: var(--muted); }
+
+    /* CTA */
+    .cta-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: clamp(40px, 6vw, 96px);
+      align-items: end;
+    }
+    .method {
+      font-size: 14px;
+      color: var(--faint);
+      line-height: 1.7;
+      max-width: 70ch;
+      margin-top: clamp(64px, 8vw, 104px);
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+    .method strong { color: var(--muted); font-weight: 500; }
+
+    @media (max-width: 1100px) { .nav-links { gap: 20px; } }
+    @media (max-width: 980px) {
+      .finding, .myth, .do-list li, .cta-grid { grid-template-columns: 1fr; gap: 20px; }
+      .ledger { grid-template-columns: 1fr 1fr; }
+      .ledger > div:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; }
+      .ledger > div:nth-child(2n) { padding-left: 20px; border-left: 1px solid var(--line); }
+    }
+    @media (max-width: 760px) {
+      .hero-figures { grid-template-columns: 1fr; }
+      .hero-figures > div, .hero-figures > div + div { padding: 18px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+      .figs--3 { grid-template-columns: 1fr; }
+      .figs--3 > div + div { padding-left: 0 !important; border-left: 0 !important; }
+      .takeaway-quote .outline { -webkit-text-stroke-width: 1px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="top-nav" aria-label="Main">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Based Audio home">
+        <div class="nav-dot-grid" aria-hidden="true">
+          <div class="nav-dot" style="width:4px;height:4px;opacity:0.35"></div>
+          <div class="nav-dot" style="width:5px;height:5px;opacity:0.55"></div>
+          <div class="nav-dot" style="width:3px;height:3px;opacity:0.35"></div>
+          <div class="nav-dot" style="width:6px;height:6px;opacity:0.75"></div>
+          <div class="nav-dot" style="width:9px;height:9px"></div>
+          <div class="nav-dot" style="width:6px;height:6px;opacity:0.65"></div>
+          <div class="nav-dot" style="width:4px;height:4px;opacity:0.45"></div>
+          <div class="nav-dot" style="width:7px;height:7px;opacity:0.85"></div>
+          <div class="nav-dot" style="width:4px;height:4px;opacity:0.45"></div>
+        </div>
+        <span class="nav-logo-text">Based Audio</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="labels.html">For Labels</a></li>
+        <li><a href="artists.html">For Artists</a></li>
+        <li><a href="live.html">Sahaya Live</a></li>
+        <li><a href="on-record.html" aria-current="page">On Record</a></li>
+        <li><a href="https://sahaya-radar.replit.app" target="_blank" rel="noopener">Radar Pro</a></li>
+        <li><a href="artists.html#contact" class="nav-cta">Send your music</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero hero-record" id="home">
+      <div class="wrap">
+        <p class="hero-kicker">On Record, Q2 2026</p>
+        <h1 class="hero-title">
+          <span class="line">What actually</span>
+          <span class="line line-2">moved the numbers.</span>
+        </h1>
+        <p class="hero-sub">Not industry averages. Not public data. This is what happened to the artists on Sahaya between 1 April and 30 June 2026: which releases kept growing, which ones faded, and why. Including a campaign that lifted an artist's daily streams by half, right up until the day it stopped.</p>
+        <div class="hero-actions">
+          <a href="#findings" class="btn btn-solid">Read the findings</a>
+          <a href="based-audio-q2-2026-report.pdf" class="btn btn-line" download>Download the full report (PDF)</a>
+        </div>
+        <div class="hero-figures">
+          <div><div class="fig">28.1M</div><div class="fig-label">Streams analysed</div></div>
+          <div><div class="fig">34</div><div class="fig-label">New releases tracked</div></div>
+          <div><div class="fig">9,246</div><div class="fig-label">Predictions logged, 4,833 checked against what happened</div></div>
+        </div>
+        <p class="trust">Every artist, song and label is anonymised. Every figure comes from observed daily Spotify for Artists data. No projections, no estimates, no borrowed benchmarks. If we didn't capture a day, it stays a gap.</p>
+      </div>
+    </section>
+
+    <!-- THE QUARTER -->
+    <section class="section-pad rule" id="quarter">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="h2">The quarter in numbers</h2>
+          <p class="section-intro">Sahaya reads streams, listeners, saves, playlist activity and where your algorithmic plays come from, every day, for every artist. Rosters span pop, R&amp;B, dance and house, Afro and amapiano, Latin, folk, reggae, and rock and metal.</p>
+        </div>
+        <div class="ledger">
+          <div><div class="fig">28,125,725</div><div class="fig-label">Streams analysed</div></div>
+          <div><div class="fig">25.2M</div><div class="fig-label">Listener-days observed</div></div>
+          <div><div class="fig">778,924</div><div class="fig-label">Saves, 2.8% of all streams</div></div>
+          <div><div class="fig">18</div><div class="fig-label">Artists tracked daily</div></div>
+          <div><div class="fig">34</div><div class="fig-label">New releases in the quarter</div></div>
+          <div><div class="fig">179</div><div class="fig-label">Songs with daily-level data</div></div>
+          <div><div class="fig">9</div><div class="fig-label">Campaigns active during Q2</div></div>
+          <div><div class="fig">9,246</div><div class="fig-label">Predictions logged</div></div>
+          <div><div class="fig">31.5%</div><div class="fig-label">Of May and June streams were algorithmic</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINDINGS -->
+    <section class="section-pad rule" id="findings">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="h2">Five things we learned</h2>
+          <p class="section-intro">What separated the releases that kept climbing from the ones that disappeared. Some of it will change how you spend your next release budget.</p>
+        </div>
+
+        <!-- 1 -->
+        <article class="finding">
+          <div>
+            <p class="finding-no">Finding 1 of 5</p>
+            <h3 class="finding-title">A campaign rents attention. The algorithm decides what you keep.</h3>
+          </div>
+          <div class="finding-body">
+            <p>Two paid campaigns ran on Sahaya artists this quarter: one behind an established pop release, one behind a three-track catalogue starting from almost nothing. Both worked while the money was on. Campaign 1 took its release from <strong>roughly 2,000 to 2,900 streams a day</strong> for a month. Campaign 2 took a near-dormant catalogue to a peak in the low thousands inside two weeks.</p>
+            <p>Neither set of paid streams held up on its own. Within ten days of spend ending, Campaign 1 had dropped to around a quarter of its pre-campaign pace. Campaign 2 had fallen 91% from its peak before its spend had even finished.</p>
+            <p>Then the part that matters. Within days of Campaign 2's spend finishing, just after the quarter closed, <strong>Discover Weekly picked up the catalogue, unpaid</strong>, reaching around 1,400 algorithmic streams a day at its peak. The paid streams were rented. What the campaign planted in the algorithm wasn't.</p>
+            <div class="figs figs--3">
+              <div><div class="fig up">+48%</div><div class="fig-label">Average daily streams while spend was active, Campaign 1</div></div>
+              <div><div class="fig down">&minus;83%</div><div class="fig-label">Below its during-campaign average within 10 days of spend ending, Campaign 1</div></div>
+              <div><div class="fig down">&minus;91%</div><div class="fig-label">From peak before spend had even finished, Campaign 2</div></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="finding">
+          <div>
+            <p class="finding-no">Finding 2 of 5</p>
+            <h3 class="finding-title">Saves keep the door open.</h3>
+          </div>
+          <div class="finding-body">
+            <p>Two releases sat at opposite ends. Release D peaked above <strong>2,000 streams a day</strong>, but fewer than one in a hundred listeners saved it. Within weeks it was in single digits.</p>
+            <p>Release J never had a big spike and never needed one. <strong>One in five listeners saved it</strong>, and its base held steady all quarter at a level Spotify kept feeding, with <strong>no campaign behind it at all</strong>. Exposure opens the door. Saves keep it open.</p>
+            <div class="bars" role="img" aria-label="Save rate across Q2: Release J 20.7 percent, Release D 0.7 percent. Streams per day by June: Release J about 380, Release D about 5.">
+              <p class="bars-title">Save rate across Q2</p>
+              <div class="bar-row">
+                <div class="bar-meta"><span>Release J</span><span>20.7%</span></div>
+                <div class="bar-track"><div class="bar-fill bar-fill--cyan" style="width:100%"></div></div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-meta"><span>Release D</span><span>0.7%</span></div>
+                <div class="bar-track"><div class="bar-fill bar-fill--magenta" style="width:3.4%"></div></div>
+              </div>
+              <p class="bars-title" style="margin-top:28px">Streams per day by June</p>
+              <div class="bar-row">
+                <div class="bar-meta"><span>Release J</span><span>~380</span></div>
+                <div class="bar-track"><div class="bar-fill bar-fill--cyan" style="width:100%"></div></div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-meta"><span>Release D</span><span>~5</span></div>
+                <div class="bar-track"><div class="bar-fill bar-fill--magenta" style="width:1.3%"></div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="finding">
+          <div>
+            <p class="finding-no">Finding 3 of 5</p>
+            <h3 class="finding-title">Your first week doesn't decide anything.</h3>
+          </div>
+          <div class="finding-body">
+            <p>We compared the first 30 days of every Q2 release with at least four weeks of data. Release B had by far the biggest launch of the quarter and had <strong>lost two-thirds of that pace by week 4</strong>.</p>
+            <p>Release C logged <strong>five streams in its entire first week</strong>. A month later it was doing 7,500 a week. Across all eight releases, week-one volume did not predict which ones would still be growing a month on.</p>
+            <p>One caution: a few week-four totals were inflated by single-day spikes rather than steady growth. That's why we judge a release on its trajectory and engagement, never on one week's total. Every surge we saw in Q2 decayed. What separated the winners was the floor left behind, and that floor tracked saves and repeat listens, not launch size.</p>
+            <div class="figs">
+              <div><div class="fig">59,726</div><div class="fig-label">Week-one streams for the biggest launch, down two-thirds by week 4</div></div>
+              <div><div class="fig up">5 <span style="color:var(--faint)">to</span> 7,500</div><div class="fig-label">Release C: week-one streams, then its weekly pace a month later</div></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="finding">
+          <div>
+            <p class="finding-no">Finding 4 of 5</p>
+            <h3 class="finding-title">Stop chasing Discover Weekly.</h3>
+          </div>
+          <div class="finding-body">
+            <p>From May, when we started tracking where algorithmic plays come from, <strong>31.5% of all streams were algorithmic</strong>: 7.0M in total. Radio and algorithmic Mixes did the heavy lifting. Discover Weekly, the one everybody talks about, barely registered.</p>
+            <p>Editorial playlists added 2.78M streams across the quarter. Real, but algorithmic surfaces out-delivered them roughly 2.5 to 1. And the biggest gains came after Spotify gained confidence in a track, not on release day. The path we kept seeing: release, campaign exposure, listener signals build up, Radio and Mixes pick it up, sustained growth.</p>
+            <div class="bars" role="img" aria-label="Algorithmic streams by surface, May and June 2026: Algorithmic Mixes 2,257,323; Radio 1,641,277; Release Radar 249,894; Discover Weekly 64,750.">
+              <p class="bars-title">Algorithmic streams by surface, May and June. Total algorithmic: 7,021,818</p>
+              <div class="bar-row">
+                <div class="bar-meta"><span>Algorithmic Mixes</span><span>2,257,323</span></div>
+                <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-meta"><span>Radio</span><span>1,641,277</span></div>
+                <div class="bar-track"><div class="bar-fill" style="width:72.7%"></div></div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-meta"><span>Release Radar</span><span>249,894</span></div>
+                <div class="bar-track"><div class="bar-fill bar-fill--dim" style="width:11.1%"></div></div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-meta"><span>Discover Weekly</span><span>64,750</span></div>
+                <div class="bar-track"><div class="bar-fill bar-fill--dim" style="width:2.9%"></div></div>
+              </div>
+            </div>
+            <div class="figs figs--3">
+              <div><div class="fig">12x</div><div class="fig-label">Radio and Mixes streams versus Discover Weekly and Release Radar combined</div></div>
+              <div><div class="fig">&lt;1%</div><div class="fig-label">Of algorithmic volume came from Discover Weekly</div></div>
+              <div><div class="fig">2.5:1</div><div class="fig-label">Algorithmic streams versus editorial playlist streams</div></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="finding">
+          <div>
+            <p class="finding-no">Finding 5 of 5</p>
+            <h3 class="finding-title">Your daily numbers are mostly noise.</h3>
+          </div>
+          <div class="finding-body">
+            <p>Sahaya logs a prediction for every artist, every day, then grades it against what really happened. <strong>4,833 were graded in Q2.</strong></p>
+            <p>Weekly direction is readable: our model called whether an artist was rising, flat or falling <strong>49.2% of the time</strong>, against 40.8% for simply assuming last week would repeat. Next-day calls are a different story. Even our model only hit 15.1%, and plain "same as yesterday" beat it.</p>
+            <p>We publish that number on purpose. If a model watching your data every day can't call tomorrow, you shouldn't be making decisions off one day's rise or dip either.</p>
+            <div class="bars" role="img" aria-label="Weekly trend calls, three possible states: random guess 31.1 percent, same as last week 40.8 percent, Based Audio model 49.2 percent. Exact next-day calls: random guess 10.7 percent, Based Audio model 15.1 percent, same as yesterday 27.5 percent. 1,619 graded calls each.">
+              <p class="bars-title">Weekly trend calls: rising, flat or falling (n = 1,619)</p>
+              <div class="bar-row"><div class="bar-meta"><span>Random guess</span><span>31.1%</span></div><div class="bar-track"><div class="bar-fill bar-fill--dim" style="width:31.1%"></div></div></div>
+              <div class="bar-row"><div class="bar-meta"><span>&ldquo;Same as last week&rdquo;</span><span>40.8%</span></div><div class="bar-track"><div class="bar-fill bar-fill--dim" style="width:40.8%"></div></div></div>
+              <div class="bar-row"><div class="bar-meta"><span>Sahaya</span><span>49.2%</span></div><div class="bar-track"><div class="bar-fill bar-fill--cyan" style="width:49.2%"></div></div></div>
+              <p class="bars-title" style="margin-top:28px">Exact next-day stream calls (n = 1,619)</p>
+              <div class="bar-row"><div class="bar-meta"><span>Random guess</span><span>10.7%</span></div><div class="bar-track"><div class="bar-fill bar-fill--dim" style="width:10.7%"></div></div></div>
+              <div class="bar-row"><div class="bar-meta"><span>Sahaya</span><span>15.1%</span></div><div class="bar-track"><div class="bar-fill bar-fill--magenta" style="width:15.1%"></div></div></div>
+              <div class="bar-row"><div class="bar-meta"><span>&ldquo;Same as yesterday&rdquo;</span><span>27.5%</span></div><div class="bar-track"><div class="bar-fill bar-fill--dim" style="width:27.5%"></div></div></div>
+            </div>
+            <p class="bars-title" style="margin-top:36px">What actually tells you where a release is going</p>
+            <ul class="signals">
+              <li><span>The floor left after exposure: saves and repeat listens</span><span class="lvl lvl-high">High</span></li>
+              <li><span>Radio and Mixes pick-up</span><span class="lvl lvl-high">High</span></li>
+              <li><span>Weekly trend direction</span><span class="lvl lvl-high">High</span></li>
+              <li><span>Save rate on its own</span><span class="lvl">Medium. Supports, doesn't decide</span></li>
+              <li><span>Launch-week volume</span><span class="lvl">Low</span></li>
+              <li><span>Single-day moves</span><span class="lvl lvl-noise">Noise</span></li>
+            </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MYTHS -->
+    <section class="section-pad rule" id="myths">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="h2">Three things to stop believing</h2>
+          <p class="section-intro">You'll hear all of these from other artists, from managers, from people selling you playlists. The quarter's data says otherwise.</p>
+        </div>
+        <ul class="myths">
+          <li class="myth">
+            <span class="myth-claim">The biggest first day wins</span>
+            <p>The quarter's biggest launch dropped to a third of its launch pace by week 4. A release with five first-week streams was doing 7,500 a week a month later.</p>
+          </li>
+          <li class="myth">
+            <span class="myth-claim">Discover Weekly is the goal</span>
+            <p>It delivered 64,750 streams across every artist on Sahaya in Q2. That's under 1% of the 7.0M algorithmic streams we saw. Radio and Mixes are where the volume is.</p>
+          </li>
+          <li class="myth">
+            <span class="myth-claim">Your daily numbers tell you how you're doing</span>
+            <p>Weekly direction can be read. Exact next-day calls did worse than assuming nothing changes. Reading meaning into one day is reading noise.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAKEAWAYS -->
+    <section class="section-pad rule" id="takeaways">
+      <div class="wrap">
+        <p class="hero-kicker">The takeaway</p>
+        <p class="takeaway-quote">Spend buys exposure. <span class="outline">Listeners decide if Spotify keeps going.</span></p>
+
+        <div class="section-head" style="margin-bottom:32px">
+          <h2 class="h2" style="font-size:clamp(36px,4.4vw,64px)">What to do with this</h2>
+          <p class="section-intro">Every paid campaign we measured lifted streams while the money was on. In every case, the paid streams themselves faded. What mattered was the handover: one campaign gave its gains back, the other seeded an unpaid Discover Weekly pickup.</p>
+        </div>
+        <ul class="do-list">
+          <li>
+            <h3>Don't judge a release on week one.</h3>
+            <p>And don't kill a campaign on week-one numbers either. One of the quarter's slowest starters was doing 7,500 streams a week a month later.</p>
+          </li>
+          <li>
+            <h3>Watch for Radio and Mixes.</h3>
+            <p>Pick-up there was the most reliable early sign of sustained growth we saw all quarter.</p>
+          </li>
+          <li>
+            <h3>Read your week, not your day.</h3>
+            <p>Weekly trend direction is learnable. Daily moves are mostly noise.</p>
+          </li>
+          <li>
+            <h3>Treat paid exposure as an audition.</h3>
+            <p>Budget for it, but know that saves and repeat listens decide what survives once the spend stops.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-pad rule" id="next">
+      <div class="wrap">
+        <div class="cta-grid">
+          <div>
+            <h2 class="h2">Want this reading on your own music?</h2>
+            <p class="contact-lede">This is what Sahaya does for every artist on it, every day. Send us your Spotify link and we'll tell you which song has real pull and whether now is the moment to push it.</p>
+          </div>
+          <div class="hero-actions" style="margin-top:0">
+            <a href="artists.html#contact" class="btn btn-solid">Send us your music</a>
+            <a href="based-audio-q2-2026-report.pdf" class="btn btn-line" download>Full report, PDF, 9 pages</a>
+          </div>
+        </div>
+
+        <p class="method"><strong>About this report.</strong> Based Audio analyses daily Spotify for Artists data from artists on Sahaya to understand how releases build or lose momentum, when Spotify increases algorithmic exposure, and when to push, hold or stop spending. All figures were computed from observed data for 1 April to 30 June 2026. Identities are anonymised, and days without captured data are treated as gaps, never estimated. Where a metric was only tracked for part of the quarter, we say so: surface-level algorithmic tracking began at the start of May, so surface figures cover May and June only. The full nine-page report has the charts, methodology and anonymised release-level data.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span><strong>Based Audio</strong>&nbsp;&nbsp;Decision intelligence for streaming campaigns</span>
+      <ul class="footer-list">
+        <li>UK-based, GDPR compliant</li>
+        <li>Read-only Spotify access</li>
+        <li>&copy; 2026 Based Audio</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('top-nav');
+    const toggle = nav.querySelector('.nav-toggle');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Close' : 'Menu';
+    });
+    nav.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Menu';
+    }));
+  </script>
+</body>
+</html>
