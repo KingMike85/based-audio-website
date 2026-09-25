@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Based Audio | Streaming campaigns for independent artists</title>
-  <meta name="description" content="Streaming campaigns for independent artists. Sahaya AGI picks the song, finds the window, and we run the push.">
+  <title>Sahaya | Streaming campaigns for independent artists</title>
+  <meta name="description" content="Streaming campaigns for independent artists. Sahaya picks the song, finds the window, and we run the push.">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#000007">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
       --faint: #6d6b78;
       --cyan: #00e1ff;      /* Zone Four */
       --magenta: #fa38d0;   /* Jamilah */
-      --blue: #00b4ff;      /* Based Audio electric blue */
+      --blue: #00b4ff;      /* brand electric blue */
 
       --display: 'Big Shoulders Display', 'Arial Narrow', 'Helvetica Neue', sans-serif;
       --body: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -505,6 +505,46 @@
     .footer-inner strong { color: var(--paper); font-weight: 500; }
     .footer-list { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; }
 
+    /* ---------- CHANNELS ---------- */
+    .channels { list-style: none; border-top: 1px solid var(--line-strong); }
+    .channel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr) minmax(0, 1fr);
+      gap: 32px;
+      padding: 30px 0 32px;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+    .channel-name {
+      font-family: var(--display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(36px, 4vw, 56px);
+      line-height: 0.95;
+    }
+    .channel-what { color: var(--paper); font-weight: 300; }
+    .channel-check { color: var(--muted); font-size: 15px; }
+    .channel-check span { display: block; color: var(--cyan); font-size: 14px; margin-bottom: 4px; }
+    .stage-note {
+      margin-top: clamp(40px, 5vw, 64px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 48px;
+      align-items: start;
+    }
+    .stage-lede {
+      font-family: var(--display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(30px, 3.2vw, 44px);
+      line-height: 1;
+    }
+    .stage-note p:last-child { color: var(--muted); max-width: 54ch; }
+    @media (max-width: 980px) {
+      .channel { grid-template-columns: 1fr; gap: 10px; }
+      .stage-note { grid-template-columns: 1fr; gap: 16px; }
+    }
+
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 980px) {
       .hero-foot, .section-head, .contact-grid { grid-template-columns: 1fr; }
@@ -549,7 +589,7 @@
 
   <nav id="top-nav" aria-label="Main">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Based Audio home">
+      <a href="index.html" class="nav-logo" aria-label="Sahaya home">
         <div class="nav-dot-grid" aria-hidden="true">
           <div class="nav-dot" style="width:4px;height:4px;opacity:0.35"></div>
           <div class="nav-dot" style="width:5px;height:5px;opacity:0.55"></div>
@@ -561,7 +601,7 @@
           <div class="nav-dot" style="width:7px;height:7px;opacity:0.85"></div>
           <div class="nav-dot" style="width:4px;height:4px;opacity:0.45"></div>
         </div>
-        <span class="nav-logo-text">Based Audio</span>
+        <span class="nav-logo-text">Sahaya</span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
       <ul class="nav-links" id="nav-links">
@@ -577,7 +617,7 @@
     <!-- HERO -->
     <section class="hero" id="home">
       <div class="wrap">
-        <p class="hero-kicker">Based Audio for independent artists</p>
+        <p class="hero-kicker">Sahaya for independent artists</p>
         <h1 class="hero-title">
           <span class="line">You made the record.</span>
           <span class="line line-2">We find its moment.</span>
@@ -596,7 +636,7 @@
 
         <div class="hero-foot">
           <div>
-            <p class="hero-sub">We run streaming campaigns for independent artists. Sahaya AGI reads your Spotify data every day, finds the song people keep coming back to, and flags the week Spotify starts listening. Then we put the push behind it and show you <strong>exactly what came back</strong>.</p>
+            <p class="hero-sub">Sahaya runs campaigns for independent artists. It reads your Spotify data every day, finds the song people keep coming back to, and flags the week Spotify starts listening. Then we put the right push behind it, from playlisting to Meta ads, UGC, TikTok and YouTube, and show you <strong>exactly what came back</strong>.</p>
             <div class="hero-actions">
               <a href="#contact" class="btn btn-solid">Send us your music</a>
               <a href="#results" class="btn btn-line">See the results</a>
@@ -622,7 +662,7 @@
           <li class="track">
             <span class="track-no">01</span>
             <h3 class="track-title">Pick the song</h3>
-            <p class="track-desc">Not every track is ready for money behind it. Sahaya AGI reads save rate and listener behaviour across your catalogue daily and backs the one with real pull. Sometimes that isn't the single you'd have chosen.</p>
+            <p class="track-desc">Not every track is ready for money behind it. Sahaya reads save rate and listener behaviour across your catalogue daily and backs the one with real pull. Sometimes that isn't the single you'd have chosen.</p>
           </li>
           <li class="track">
             <span class="track-no">02</span>
@@ -632,11 +672,55 @@
           <li class="track">
             <span class="track-no">03</span>
             <h3 class="track-title">Run the push</h3>
-            <p class="track-desc">We run the campaign end to end across our partner network and track every signal as it lands. You see where the streams, saves and playlist adds actually came from. Data-first reporting, never hype.</p>
+            <p class="track-desc">We run the campaign end to end on the channels that fit your stage, and track every signal as it lands. You see where the streams, saves and playlist adds actually came from. Data-first reporting, never hype.</p>
           </li>
         </ol>
 
         <p class="aside-line">You keep making music. We handle the campaign and send you the numbers.</p>
+      </div>
+    </section>
+
+
+    <!-- CHANNELS -->
+    <section class="section-pad rule" id="channels">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="h2">Every channel. The right one first.</h2>
+          <p class="section-intro">An artist on 300 monthly listeners and an artist on 30,000 shouldn't be spending the same way. Sahaya reads where you are right now and works out which channels will do the most for your budget at this stage. As you grow, the mix changes with you.</p>
+        </div>
+
+        <ul class="channels">
+          <li class="channel">
+            <h3 class="channel-name">Playlisting</h3>
+            <p class="channel-what">Puts your song in front of listeners who already live in your genre.</p>
+            <p class="channel-check"><span>Sahaya checks</span>whether your save rate can hold on to the listeners a playlist sends you.</p>
+          </li>
+          <li class="channel">
+            <h3 class="channel-name">Meta ads</h3>
+            <p class="channel-what">Targeted reach across Instagram and Facebook, sending people straight to the track.</p>
+            <p class="channel-check"><span>Sahaya checks</span>whether paid clicks are turning into saves and repeat listens, or just one-off plays.</p>
+          </li>
+          <li class="channel">
+            <h3 class="channel-name">UGC</h3>
+            <p class="channel-what">Creators using your sound in their own content, so the song travels through people, not ads.</p>
+            <p class="channel-check"><span>Sahaya checks</span>whether the track has the moment and the hook for creators to build around.</p>
+          </li>
+          <li class="channel">
+            <h3 class="channel-name">TikTok</h3>
+            <p class="channel-what">Campaigns built to get the sound moving on the platform where songs break.</p>
+            <p class="channel-check"><span>Sahaya checks</span>whether plays there are carrying over into Spotify listeners.</p>
+          </li>
+          <li class="channel">
+            <h3 class="channel-name">YouTube</h3>
+            <p class="channel-what">Video campaigns that put the song, the visuals and you in front of new viewers.</p>
+            <p class="channel-check"><span>Sahaya checks</span>whether video views are building an audience that follows you back to the music.</p>
+          </li>
+        </ul>
+
+        <div class="stage-note">
+          <p class="stage-lede">You don't pay for five channels because five channels exist.</p>
+          <p>Sahaya weighs your listener count, save rate, momentum and budget, then puts the money where it will work hardest for you right now. Sometimes that's one channel. Sometimes it's three working together. Every pound is tracked, and if a channel stops pulling its weight, we move the spend.</p>
+        </div>
       </div>
     </section>
 
@@ -670,7 +754,7 @@
               </div>
             </div>
             <div class="case-copy">
-              <p>Zone Four is our own artist project and the test bed for everything we run. It started at <strong>57 monthly listeners</strong>, with Sahaya AGI reading the signals daily to choose which songs to push and when.</p>
+              <p>Zone Four is our own artist project and the test bed for everything we run. It started at <strong>57 monthly listeners</strong>, with Sahaya reading the signals daily to choose which songs to push and when.</p>
               <p>Across a multi-song campaign from <strong>1 February to 1 May 2026</strong>, the project pulled <strong>224K streams and 17K playlist adds</strong> and reached <strong>75.4K monthly listeners</strong>.</p>
             </div>
             <p class="case-quote">We didn't build a theory and sell it to you. We ran it on ourselves first.</p>
@@ -699,7 +783,7 @@
               </div>
             </div>
             <div class="case-copy">
-              <p>Jamilah came to us at <strong>92 monthly listeners</strong>. Sahaya AGI flagged &ldquo;African In New York&rdquo; as the track with the strongest underlying signals, and we timed the push to the week its momentum started building.</p>
+              <p>Jamilah came to us at <strong>92 monthly listeners</strong>. Sahaya flagged &ldquo;African In New York&rdquo; as the track with the strongest underlying signals, and we timed the push to the week its momentum started building.</p>
               <p>Inside two weeks it pulled <strong>17,500 streams and 977 playlist adds</strong>, taking her past <strong>14.4K monthly listeners</strong>. The spend went where the data said it would work hardest.</p>
             </div>
             <p class="case-quote">The right song, pushed at the right moment, with the budget behind it.</p>
@@ -772,11 +856,11 @@
 
   <footer>
     <div class="wrap footer-inner">
-      <span><strong>Based Audio</strong>&nbsp;&nbsp;Decision intelligence for streaming campaigns</span>
+      <span><strong>Sahaya</strong>&nbsp;&nbsp;Decision intelligence for streaming campaigns</span>
       <ul class="footer-list">
         <li>UK-based, GDPR compliant</li>
         <li>Read-only Spotify access</li>
-        <li>&copy; 2026 Based Audio</li>
+        <li>&copy; 2026 Sahaya</li>
       </ul>
     </div>
   </footer>
