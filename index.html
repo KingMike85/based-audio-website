@@ -619,6 +619,17 @@
       background: var(--raise) !important;
     }
     .voice iframe { border-radius: 6px !important; }
+    .voice-media { width: 100%; max-width: 420px; }
+    .voice-video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      background: var(--raise);
+      border-radius: 6px;
+    }
+    .voice-media .voice-fallback { aspect-ratio: 9 / 16; background: var(--raise); border: 1px solid var(--line); border-radius: 6px; }
+    .voice-cap { max-width: 420px !important; }
     .voice-fallback {
       display: flex;
       flex-direction: column;
@@ -1021,22 +1032,20 @@
         </div>
         <div class="voices">
           <figure class="voice">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DaVISLosM9S/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/DaVISLosM9S/" target="_blank" rel="noopener" class="voice-fallback">
-                <span class="voice-fallback-title">Watch on Instagram</span>
-                <span>Jamilah</span>
-              </a>
-            </blockquote>
-            <figcaption class="voice-cap"><span class="voice-name">Jamilah</span><span class="voice-sub">&ldquo;African In New York&rdquo; campaign. <a href="#results">See her numbers</a></span></figcaption>
-          </figure>
-          <figure class="voice">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DaRBm92I_Pe/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+            <div class="voice-media" data-video="videos/amaya-nicole.mp4" data-poster="videos/amaya-nicole.jpg" data-ig="https://www.instagram.com/reel/DaRBm92I_Pe/">
               <a href="https://www.instagram.com/reel/DaRBm92I_Pe/" target="_blank" rel="noopener" class="voice-fallback">
                 <span class="voice-fallback-title">Watch on Instagram</span>
-                <span>Amaya Nicole</span>
               </a>
-            </blockquote>
+            </div>
             <figcaption class="voice-cap"><span class="voice-name">Amaya Nicole</span><span class="voice-sub">Ran a campaign with Sahaya</span></figcaption>
+          </figure>
+          <figure class="voice">
+            <div class="voice-media" data-video="videos/jamilah.mp4" data-poster="videos/jamilah.jpg" data-ig="https://www.instagram.com/reel/DaVISLosM9S/">
+              <a href="https://www.instagram.com/reel/DaVISLosM9S/" target="_blank" rel="noopener" class="voice-fallback">
+                <span class="voice-fallback-title">Watch on Instagram</span>
+              </a>
+            </div>
+            <figcaption class="voice-cap"><span class="voice-name">Jamilah</span><span class="voice-sub">&ldquo;African In New York&rdquo; campaign. <a href="#results">See her numbers</a></span></figcaption>
           </figure>
         </div>
       </div>
@@ -1117,6 +1126,35 @@
 
   <script>
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Testimonials: play the self-hosted video if it's in /videos (clean, no likes or header).
+    // If the file isn't there yet, fall back to Instagram's embed.
+    let igScript;
+    const loadInstagram = () => {
+      if (window.instgrm) { window.instgrm.Embeds.process(); return; }
+      if (igScript) return;
+      igScript = document.createElement('script');
+      igScript.async = true;
+      igScript.src = 'https://www.instagram.com/embed.js';
+      document.body.appendChild(igScript);
+    };
+    document.querySelectorAll('.voice-media').forEach(slot => {
+      const v = document.createElement('video');
+      v.className = 'voice-video';
+      v.controls = true;
+      v.playsInline = true;
+      v.preload = 'metadata';
+      const poster = new Image();
+      poster.onload = () => { v.poster = slot.dataset.poster; };
+      poster.src = slot.dataset.poster;
+      v.addEventListener('loadedmetadata', () => slot.replaceChildren(v), { once: true });
+      v.addEventListener('error', () => {
+        slot.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${slot.dataset.ig}" data-instgrm-version="14"><a href="${slot.dataset.ig}" target="_blank" rel="noopener" class="voice-fallback"><span class="voice-fallback-title">Watch on Instagram</span></a></blockquote>`;
+        loadInstagram();
+      }, { once: true });
+      v.src = slot.dataset.video + '#t=0.1';
+    });
+
 
 
 
@@ -1239,6 +1277,5 @@
       }
     });
   </script>
-  <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
