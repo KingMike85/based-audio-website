@@ -242,6 +242,33 @@
     .btn-line { color: var(--paper); border: 1px solid var(--line-strong); background: transparent; }
     .btn-line:hover { border-color: var(--paper); }
 
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-left: 1px solid var(--line-strong);
+      margin: 0;
+    }
+    .hero-stats > div {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      padding: 4px 16px 20px 24px;
+    }
+    .hero-stats > div:nth-child(n+3) { padding-top: 20px; border-top: 1px solid var(--line); }
+    .hero-stats dd {
+      margin: 0;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(40px, 4vw, 56px);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .hero-stats dt {
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
     .hero-proof {
       border-left: 1px solid var(--line-strong);
       padding-left: 24px;
@@ -615,6 +642,7 @@
     @media (max-width: 980px) {
       .hero-foot, .section-head, .contact-grid { grid-template-columns: 1fr; }
       .hero-proof { justify-self: start; }
+      .hero-stats { max-width: 520px; }
       .case, .case--flip { grid-template-columns: 1fr; }
       .case--flip .case-art { order: 0; }
       .case-art { max-width: 560px; }
@@ -708,16 +736,12 @@
               <a href="#results" class="btn btn-line">See the results</a>
             </div>
           </div>
-          <div class="hero-proof">
-            <div class="hero-proof-item">
-              <div class="hero-proof-num">115</div>
-              <p>Artists on the Sahaya roster right now.</p>
-            </div>
-            <div class="hero-proof-item">
-              <div class="hero-proof-num">57 <span>to</span> 75.4K</div>
-              <p>Monthly listeners on Zone Four, our own project. Same system, same playbook we run for you.</p>
-            </div>
-          </div>
+          <dl class="hero-stats">
+            <div><dt>Artists on Sahaya</dt><dd>115+</dd></div>
+            <div><dt>Tracks tracked</dt><dd>2,000+</dd></div>
+            <div><dt>Combined catalogue streams</dt><dd>12B+</dd></div>
+            <div><dt>Predictions graded against actual results</dt><dd>111K+</dd></div>
+          </dl>
         </div>
       </div>
     </section>
