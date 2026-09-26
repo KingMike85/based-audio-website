@@ -550,6 +550,67 @@
       .stage-note { grid-template-columns: 1fr; gap: 16px; }
     }
 
+    /* ---------- TESTIMONIALS ---------- */
+    .voices {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(24px, 4vw, 48px);
+      align-items: start;
+    }
+    .voice { margin: 0; display: flex; flex-direction: column; align-items: center; }
+    .voice-cap {
+      width: 100%;
+      max-width: 480px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line-strong);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .voice-name {
+      font-family: var(--display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(30px, 3vw, 40px);
+      line-height: 1;
+    }
+    .voice-sub { font-size: 14px; color: var(--muted); }
+    .voice-sub a { color: var(--paper); text-underline-offset: 3px; }
+    .voice .instagram-media {
+      width: 100% !important;
+      max-width: 480px !important;
+      min-width: 0 !important;
+      margin: 0 !important;
+      border: 1px solid var(--line) !important;
+      border-radius: 6px !important;
+      box-shadow: none !important;
+      background: var(--raise) !important;
+    }
+    .voice iframe { border-radius: 6px !important; }
+    .voice-fallback {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 6px;
+      aspect-ratio: 4 / 5;
+      padding: 28px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .voice-fallback-title {
+      font-family: var(--display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 32px;
+      line-height: 1;
+      color: var(--paper);
+    }
+    @media (max-width: 760px) {
+      .voices { grid-template-columns: 1fr; }
+    }
+
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 980px) {
       .hero-foot, .section-head, .contact-grid { grid-template-columns: 1fr; }
@@ -803,6 +864,36 @@
       </div>
     </section>
 
+    <!-- TESTIMONIALS -->
+    <section class="section-pad rule" id="voices">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="h2">In their words</h2>
+          <p class="section-intro">Don't take it from us. Artists who've run campaigns with Sahaya, talking about what it did for their music.</p>
+        </div>
+        <div class="voices">
+          <figure class="voice">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DaVISLosM9S/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+              <a href="https://www.instagram.com/reel/DaVISLosM9S/" target="_blank" rel="noopener" class="voice-fallback">
+                <span class="voice-fallback-title">Watch on Instagram</span>
+                <span>Jamilah</span>
+              </a>
+            </blockquote>
+            <figcaption class="voice-cap"><span class="voice-name">Jamilah</span><span class="voice-sub">&ldquo;African In New York&rdquo; campaign. <a href="#results">See her numbers</a></span></figcaption>
+          </figure>
+          <figure class="voice">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DaRBm92I_Pe/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+              <a href="https://www.instagram.com/reel/DaRBm92I_Pe/" target="_blank" rel="noopener" class="voice-fallback">
+                <span class="voice-fallback-title">Watch on Instagram</span>
+                <span>Amaya Nicole</span>
+              </a>
+            </blockquote>
+            <figcaption class="voice-cap"><span class="voice-name">Amaya Nicole</span><span class="voice-sub">Ran a campaign with Sahaya</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section class="section-pad rule" id="contact">
       <div class="wrap contact-grid">
@@ -975,5 +1066,6 @@
       }
     });
   </script>
+  <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
