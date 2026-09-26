@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>On Record: Q2 2026 | Sahaya</title>
-  <meta name="description" content="What actually moved the numbers for artists on Sahaya in Q2 2026. 28.1M streams, 34 releases, anonymised and measured.">
+  <title>On Record: What 28 million streams taught us | Sahaya</title>
+  <meta name="description" content="What 28 million streams taught us about releasing music. Five lessons from 34 new releases tracked on Sahaya in Q2 2026.">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#000007">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -545,191 +545,188 @@
     }
   </style>
   <style>
-    /* ---------- ON RECORD ADDITIONS ---------- */
-    .nav-links { gap: 26px; }
-
+    /* ---------- ON RECORD (artist edition) ---------- */
     .hero-record { align-items: flex-end; }
-    .hero-record .hero-title { font-size: clamp(56px, 9.2vw, 150px); }
-    .hero-record .hero-sub { margin-top: 36px; max-width: 62ch; }
-    .hero-figures {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    .hero-record .hero-title { font-size: clamp(48px, 7.6vw, 124px); }
+    .hero-record .hero-sub { margin-top: 36px; max-width: 58ch; }
+    .hero-record .hero-sub + .hero-sub { margin-top: 14px; color: var(--paper); }
+
+    .proof-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 12px 36px;
       margin-top: 48px;
+      padding-top: 22px;
       border-top: 1px solid var(--line-strong);
     }
-    .hero-figures > div { padding: 22px 20px 0 0; }
-    .hero-figures > div + div { padding-left: 20px; border-left: 1px solid var(--line); }
-    .fig {
+    .proof-row .pr-num {
       font-family: var(--display);
       font-weight: 700;
-      font-size: clamp(44px, 5.4vw, 80px);
+      font-size: clamp(34px, 3.6vw, 52px);
       line-height: 1;
-      font-variant-numeric: tabular-nums;
+      margin-right: 8px;
     }
-    .fig-label { margin-top: 8px; font-size: 14px; color: var(--muted); }
+    .proof-row .pr-label { color: var(--muted); font-size: 15px; }
+    .proof-note { margin-top: 14px; font-size: 14px; color: var(--faint); }
 
-    .trust {
-      margin-top: 44px;
-      max-width: 70ch;
-      font-size: 14px;
-      color: var(--faint);
-      padding-left: 16px;
-      border-left: 1px solid var(--line-strong);
-    }
-
-    /* Quarter in numbers */
-    .ledger {
+    /* Lessons */
+    .lesson {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      border-top: 1px solid var(--line-strong);
-    }
-    .ledger > div {
-      padding: 28px 24px 30px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .ledger > div:not(:nth-child(3n+1)) { padding-left: 24px; border-left: 1px solid var(--line); }
-    .ledger .fig { font-size: clamp(40px, 4.4vw, 64px); }
-
-    /* Findings */
-    .finding {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: clamp(32px, 6vw, 96px);
       padding: clamp(56px, 7vw, 96px) 0;
       border-top: 1px solid var(--line);
-      align-items: start;
+      align-items: center;
     }
-    .finding:first-of-type { border-top: 0; padding-top: 0; }
-    .finding-no { font-size: 15px; color: var(--faint); margin-bottom: 16px; }
-    .finding-title {
+    .lesson:first-of-type { border-top: 0; padding-top: 0; }
+    .lesson-no { font-size: 15px; color: var(--faint); margin-bottom: 14px; }
+    .lesson-title {
       font-family: var(--display);
       font-weight: 800;
       text-transform: uppercase;
       font-size: clamp(40px, 5vw, 72px);
       line-height: 0.92;
+      margin-bottom: 24px;
     }
-    .finding-body p { color: var(--muted); margin-bottom: 16px; max-width: 58ch; }
-    .finding-body p strong { font-weight: 500; }
+    .lesson-copy p { color: var(--muted); margin-bottom: 14px; max-width: 52ch; }
+    .lesson-takeaway {
+      margin-top: 22px;
+      padding-left: 18px;
+      border-left: 2px solid var(--cyan);
+      font-size: 19px;
+      line-height: 1.5;
+      color: var(--paper);
+      max-width: 44ch;
+    }
 
-    .figs {
+    /* Visual: single big number */
+    .big-fig {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(64px, 9.4vw, 144px);
+      line-height: 0.85;
+      font-variant-numeric: tabular-nums;
+    }
+    .big-fig .to { color: var(--faint); font-weight: 500; font-size: 0.45em; vertical-align: middle; margin: 0 0.15em; }
+    .big-label { margin-top: 16px; color: var(--muted); font-size: 15px; max-width: 36ch; }
+
+    /* Visual: campaign before/after */
+    .phase { list-style: none; border-top: 1px solid var(--line-strong); }
+    .phase li {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      border-top: 1px solid var(--line-strong);
-      margin-top: 28px;
-    }
-    .figs > div { padding: 20px 16px 20px 0; border-bottom: 1px solid var(--line); }
-    .figs > div:nth-child(2n) { padding-left: 20px; border-left: 1px solid var(--line); }
-    .figs .fig { font-size: clamp(36px, 3.8vw, 54px); }
-    .figs .fig-label { font-size: 13px; line-height: 1.45; }
-    .figs--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .figs--3 > div:nth-child(2n) { padding-left: 0; border-left: 0; }
-    .figs--3 > div + div { padding-left: 18px !important; border-left: 1px solid var(--line) !important; }
-
-    .up { color: var(--cyan); }
-    .down { color: var(--magenta); }
-
-    /* Bar charts */
-    .bars { margin-top: 32px; }
-    .bars-title { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
-    .bar-row { margin-bottom: 16px; }
-    .bar-meta {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      font-size: 14px;
-      margin-bottom: 7px;
-    }
-    .bar-meta span:last-child { font-variant-numeric: tabular-nums; color: var(--muted); }
-    .bar-track { height: 10px; background: rgba(242, 239, 233, 0.06); border-radius: 2px; overflow: hidden; }
-    .bar-fill { height: 100%; background: var(--paper); border-radius: 2px; }
-    .bar-fill--dim { background: var(--faint); }
-    .bar-fill--cyan { background: var(--cyan); }
-    .bar-fill--magenta { background: var(--magenta); }
-
-    .signals { list-style: none; border-top: 1px solid var(--line-strong); }
-    .signals li {
-      display: flex; justify-content: space-between; gap: 16px;
-      padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 15px;
-    }
-    .signals .lvl { color: var(--muted); text-align: right; }
-    .signals .lvl-high { color: var(--cyan); }
-    .signals .lvl-noise { color: var(--magenta); }
-
-    /* Myths */
-    .myths { list-style: none; border-top: 1px solid var(--line-strong); }
-    .myth {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
-      gap: 32px;
-      padding: 30px 0 34px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: baseline;
+      padding: 18px 0;
       border-bottom: 1px solid var(--line);
     }
-    .myth-claim {
+    .phase .ph-label { color: var(--muted); font-size: 15px; }
+    .phase .ph-val {
       font-family: var(--display);
       font-weight: 700;
-      text-transform: uppercase;
-      font-size: clamp(30px, 3.2vw, 44px);
-      line-height: 0.98;
-      color: var(--muted);
-      text-decoration: line-through;
-      text-decoration-color: var(--magenta);
-      text-decoration-thickness: 3px;
+      font-size: clamp(30px, 3vw, 44px);
+      line-height: 1;
+      text-align: right;
     }
-    .myth p { color: var(--muted); max-width: 56ch; }
 
-    /* Takeaways */
-    .takeaway-quote {
+    /* Visual: D vs J */
+    .versus { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .vs-card {
+      border: 1px solid var(--line-strong);
+      border-top: 3px solid var(--tone);
+      border-radius: 6px;
+      padding: 22px 20px 24px;
+      background: var(--raise);
+    }
+    .vs-card--d { --tone: var(--magenta); }
+    .vs-card--j { --tone: var(--cyan); }
+    .vs-name {
       font-family: var(--display);
       font-weight: 700;
       text-transform: uppercase;
-      font-size: clamp(40px, 5.6vw, 84px);
-      line-height: 0.95;
-      max-width: 18ch;
-      margin-bottom: clamp(48px, 6vw, 80px);
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 18px;
     }
-    .takeaway-quote .outline { color: transparent; -webkit-text-stroke: 1.5px var(--paper); }
-    .do-list { list-style: none; counter-reset: none; border-top: 1px solid var(--line-strong); }
+    .vs-rows { list-style: none; }
+    .vs-rows li { padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); }
+    .vs-rows strong { display: block; color: var(--paper); font-weight: 500; font-size: 17px; }
+    .vs-end { margin-top: 14px; font-size: 15px; color: var(--tone); }
+
+    /* Visual: two bars */
+    .duel { display: flex; flex-direction: column; gap: 26px; }
+    .duel-meta { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; margin-bottom: 10px; }
+    .duel-name { font-size: 16px; color: var(--paper); }
+    .duel-num {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(30px, 3.2vw, 46px);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .duel-track { height: 16px; border-radius: 3px; background: rgba(242, 239, 233, 0.06); overflow: hidden; }
+    .duel-fill { height: 100%; border-radius: 3px; background: var(--cyan); }
+    .duel-fill--small { background: var(--magenta); min-width: 4px; }
+    .duel-note { font-size: 13px; color: var(--faint); }
+
+    /* Visual: week not day */
+    .weekday {
+      font-family: var(--display);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: clamp(56px, 8vw, 128px);
+      line-height: 0.88;
+    }
+    .weekday .outline { display: block; color: transparent; -webkit-text-stroke: 1.5px var(--paper); }
+    .method-link { display: inline-block; margin-top: 22px; font-size: 15px; color: var(--muted); text-underline-offset: 4px; }
+    .method-link:hover { color: var(--paper); }
+
+    /* What to do */
+    .do-list { list-style: none; border-top: 1px solid var(--line-strong); }
     .do-list li {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
       gap: 32px;
-      padding: 26px 0 28px;
+      padding: 24px 0 26px;
       border-bottom: 1px solid var(--line);
+      align-items: baseline;
     }
-    .do-list h3 { font-size: 20px; font-weight: 500; line-height: 1.35; }
+    .do-list h3 {
+      font-family: var(--display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1;
+    }
     .do-list p { color: var(--muted); }
 
-    /* CTA */
+    /* CTA + report */
     .cta-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: clamp(40px, 6vw, 96px);
+      gap: clamp(32px, 6vw, 96px);
       align-items: end;
     }
-    .method {
-      font-size: 14px;
-      color: var(--faint);
-      line-height: 1.7;
-      max-width: 70ch;
+    .report-strip {
       margin-top: clamp(64px, 8vw, 104px);
-      padding-top: 28px;
+      padding: 28px 0 0;
       border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 24px 48px;
+      align-items: center;
     }
-    .method strong { color: var(--muted); font-weight: 500; }
+    .report-strip h3 { font-size: 20px; font-weight: 500; margin-bottom: 6px; }
+    .report-strip p { font-size: 14px; color: var(--faint); max-width: 68ch; }
 
-    @media (max-width: 1100px) { .nav-links { gap: 20px; } }
     @media (max-width: 980px) {
-      .finding, .myth, .do-list li, .cta-grid { grid-template-columns: 1fr; gap: 20px; }
-      .ledger { grid-template-columns: 1fr 1fr; }
-      .ledger > div:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; }
-      .ledger > div:nth-child(2n) { padding-left: 20px; border-left: 1px solid var(--line); }
+      .lesson, .do-list li, .cta-grid, .report-strip { grid-template-columns: 1fr; gap: 20px; }
+      .lesson-visual { max-width: 560px; }
     }
-    @media (max-width: 760px) {
-      .hero-figures { grid-template-columns: 1fr; }
-      .hero-figures > div, .hero-figures > div + div { padding: 18px 0; border-left: 0; border-bottom: 1px solid var(--line); }
-      .figs--3 { grid-template-columns: 1fr; }
-      .figs--3 > div + div { padding-left: 0 !important; border-left: 0 !important; }
-      .takeaway-quote .outline { -webkit-text-stroke-width: 1px; }
+    @media (max-width: 560px) {
+      .versus { grid-template-columns: 1fr; }
+      .weekday .outline { -webkit-text-stroke-width: 1px; }
     }
   </style>
 </head>
@@ -767,241 +764,137 @@
       <div class="wrap">
         <p class="hero-kicker">On Record, Q2 2026</p>
         <h1 class="hero-title">
-          <span class="line">What actually</span>
-          <span class="line line-2">moved the numbers.</span>
+          <span class="line">What 28 million streams taught us</span>
+          <span class="line line-2">about releasing music.</span>
         </h1>
-        <p class="hero-sub">Not industry averages. Not public data. This is what happened to the artists on Sahaya between 1 April and 30 June 2026: which releases kept growing, which ones faded, and why. Including a campaign that lifted an artist's daily streams by half, right up until the day it stopped.</p>
+        <p class="hero-sub">We tracked 34 new releases across Sahaya for three months. Some took off. Some disappeared. Some only started moving weeks after release.</p>
+        <p class="hero-sub">Here are the five things we&rsquo;d want to know before spending money on our next record.</p>
         <div class="hero-actions">
-          <a href="#findings" class="btn btn-solid">Read the findings</a>
-          <a href="based-audio-q2-2026-report.pdf" class="btn btn-line" download>Download the full report (PDF)</a>
+          <a href="#lessons" class="btn btn-solid">Read the five lessons</a>
+          <a href="based-audio-q2-2026-report.pdf" class="btn btn-line" download>Full report (PDF)</a>
         </div>
-        <div class="hero-figures">
-          <div><div class="fig">28.1M</div><div class="fig-label">Streams analysed</div></div>
-          <div><div class="fig">34</div><div class="fig-label">New releases tracked</div></div>
-          <div><div class="fig">9,246</div><div class="fig-label">Predictions logged, 4,833 checked against what happened</div></div>
+        <div class="proof-row">
+          <span><span class="pr-num">28.1M</span><span class="pr-label">streams observed</span></span>
+          <span><span class="pr-num">34</span><span class="pr-label">new releases</span></span>
+          <span><span class="pr-num">9</span><span class="pr-label">campaigns</span></span>
         </div>
-        <p class="trust">Every artist, song and label is anonymised. Every figure comes from observed daily Spotify for Artists data. No projections, no estimates, no borrowed benchmarks. If we didn't capture a day, it stays a gap.</p>
+        <p class="proof-note">Based on real daily artist data. No industry averages. Every artist and song is anonymised.</p>
       </div>
     </section>
 
-    <!-- THE QUARTER -->
-    <section class="section-pad rule" id="quarter">
+    <!-- LESSONS -->
+    <section class="section-pad rule" id="lessons">
       <div class="wrap">
-        <div class="section-head">
-          <h2 class="h2">The quarter in numbers</h2>
-          <p class="section-intro">Sahaya reads streams, listeners, saves, playlist activity and where your algorithmic plays come from, every day, for every artist. Rosters span pop, R&amp;B, dance and house, Afro and amapiano, Latin, folk, reggae, and rock and metal.</p>
-        </div>
-        <div class="ledger">
-          <div><div class="fig">28,125,725</div><div class="fig-label">Streams analysed</div></div>
-          <div><div class="fig">25.2M</div><div class="fig-label">Listener-days observed</div></div>
-          <div><div class="fig">778,924</div><div class="fig-label">Saves, 2.8% of all streams</div></div>
-          <div><div class="fig">18</div><div class="fig-label">Artists tracked daily</div></div>
-          <div><div class="fig">34</div><div class="fig-label">New releases in the quarter</div></div>
-          <div><div class="fig">179</div><div class="fig-label">Songs with daily-level data</div></div>
-          <div><div class="fig">9</div><div class="fig-label">Campaigns active during Q2</div></div>
-          <div><div class="fig">9,246</div><div class="fig-label">Predictions logged</div></div>
-          <div><div class="fig">31.5%</div><div class="fig-label">Of May and June streams were algorithmic</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FINDINGS -->
-    <section class="section-pad rule" id="findings">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 class="h2">Five things we learned</h2>
-          <p class="section-intro">What separated the releases that kept climbing from the ones that disappeared. Some of it will change how you spend your next release budget.</p>
-        </div>
 
         <!-- 1 -->
-        <article class="finding">
-          <div>
-            <p class="finding-no">Finding 1 of 5</p>
-            <h3 class="finding-title">A campaign rents attention. The algorithm decides what you keep.</h3>
+        <article class="lesson">
+          <div class="lesson-copy">
+            <p class="lesson-no">01</p>
+            <h2 class="lesson-title">A campaign rents attention. The algorithm decides what you keep.</h2>
+            <p>Both campaigns we tracked lifted streams while the money was being spent. The paid gains didn&rsquo;t last on their own.</p>
+            <p>But one record set off algorithmic discovery afterwards, reaching around 1,400 unpaid streams a day at its peak.</p>
+            <p class="lesson-takeaway">Don&rsquo;t just ask whether a campaign got you streams. Ask what was left after it ended.</p>
           </div>
-          <div class="finding-body">
-            <p>Two paid campaigns ran on Sahaya artists this quarter: one behind an established pop release, one behind a three-track catalogue starting from almost nothing. Both worked while the money was on. Campaign 1 took its release from <strong>roughly 2,000 to 2,900 streams a day</strong> for a month. Campaign 2 took a near-dormant catalogue to a peak in the low thousands inside two weeks.</p>
-            <p>Neither set of paid streams held up on its own. Within ten days of spend ending, Campaign 1 had dropped to around a quarter of its pre-campaign pace. Campaign 2 had fallen 91% from its peak before its spend had even finished.</p>
-            <p>Then the part that matters. Within days of Campaign 2's spend finishing, just after the quarter closed, <strong>Discover Weekly picked up the catalogue, unpaid</strong>, reaching around 1,400 algorithmic streams a day at its peak. The paid streams were rented. What the campaign planted in the algorithm wasn't.</p>
-            <div class="figs figs--3">
-              <div><div class="fig up">+48%</div><div class="fig-label">Average daily streams while spend was active, Campaign 1</div></div>
-              <div><div class="fig down">&minus;83%</div><div class="fig-label">Below its during-campaign average within 10 days of spend ending, Campaign 1</div></div>
-              <div><div class="fig down">&minus;91%</div><div class="fig-label">From peak before spend had even finished, Campaign 2</div></div>
-            </div>
+          <div class="lesson-visual">
+            <ul class="phase" aria-label="Across the two campaigns we tracked">
+              <li><span class="ph-label">Daily streams while the spend was on</span><span class="ph-val">+48%</span></li>
+              <li><span class="ph-label">The paid streams, in both campaigns</span><span class="ph-val" style="color:var(--magenta)">Faded</span></li>
+              <li><span class="ph-label">Unpaid algorithmic streams a day that followed one campaign, at peak</span><span class="ph-val" style="color:var(--cyan)">~1,400</span></li>
+            </ul>
           </div>
         </article>
 
         <!-- 2 -->
-        <article class="finding">
-          <div>
-            <p class="finding-no">Finding 2 of 5</p>
-            <h3 class="finding-title">Saves keep the door open.</h3>
+        <article class="lesson">
+          <div class="lesson-copy">
+            <p class="lesson-no">02</p>
+            <h2 class="lesson-title">Saves matter more than spikes.</h2>
+            <p>Two releases, opposite stories. One had the big moment. The other had listeners who kept it.</p>
+            <p class="lesson-takeaway">A big spike looks good. A record people come back to is worth more.</p>
           </div>
-          <div class="finding-body">
-            <p>Two releases sat at opposite ends. Release D peaked above <strong>2,000 streams a day</strong>, but fewer than one in a hundred listeners saved it. Within weeks it was in single digits.</p>
-            <p>Release J never had a big spike and never needed one. <strong>One in five listeners saved it</strong>, and its base held steady all quarter at a level Spotify kept feeding, with <strong>no campaign behind it at all</strong>. Exposure opens the door. Saves keep it open.</p>
-            <div class="bars" role="img" aria-label="Save rate across Q2: Release J 20.7 percent, Release D 0.7 percent. Streams per day by June: Release J about 380, Release D about 5.">
-              <p class="bars-title">Save rate across Q2</p>
-              <div class="bar-row">
-                <div class="bar-meta"><span>Release J</span><span>20.7%</span></div>
-                <div class="bar-track"><div class="bar-fill bar-fill--cyan" style="width:100%"></div></div>
-              </div>
-              <div class="bar-row">
-                <div class="bar-meta"><span>Release D</span><span>0.7%</span></div>
-                <div class="bar-track"><div class="bar-fill bar-fill--magenta" style="width:3.4%"></div></div>
-              </div>
-              <p class="bars-title" style="margin-top:28px">Streams per day by June</p>
-              <div class="bar-row">
-                <div class="bar-meta"><span>Release J</span><span>~380</span></div>
-                <div class="bar-track"><div class="bar-fill bar-fill--cyan" style="width:100%"></div></div>
-              </div>
-              <div class="bar-row">
-                <div class="bar-meta"><span>Release D</span><span>~5</span></div>
-                <div class="bar-track"><div class="bar-fill bar-fill--magenta" style="width:1.3%"></div></div>
-              </div>
+          <div class="lesson-visual versus">
+            <div class="vs-card vs-card--d">
+              <p class="vs-name">Release D</p>
+              <ul class="vs-rows">
+                <li><strong>2,000+ a day</strong>streams at its peak</li>
+                <li><strong>0.7%</strong>save rate</li>
+              </ul>
+              <p class="vs-end">Fell to about 5 a day</p>
+            </div>
+            <div class="vs-card vs-card--j">
+              <p class="vs-name">Release J</p>
+              <ul class="vs-rows">
+                <li><strong>No big spike</strong>steady all quarter</li>
+                <li><strong>20.7%</strong>save rate</li>
+              </ul>
+              <p class="vs-end">Held around 380 a day</p>
             </div>
           </div>
         </article>
 
         <!-- 3 -->
-        <article class="finding">
-          <div>
-            <p class="finding-no">Finding 3 of 5</p>
-            <h3 class="finding-title">Your first week doesn't decide anything.</h3>
+        <article class="lesson">
+          <div class="lesson-copy">
+            <p class="lesson-no">03</p>
+            <h2 class="lesson-title">A slow first week doesn&rsquo;t mean you&rsquo;ve lost.</h2>
+            <p>One of the slowest releases we tracked had five streams in its first week. A month later it was doing 7,500 a week. Meanwhile the quarter&rsquo;s biggest launch had lost two-thirds of its pace by week four.</p>
+            <p class="lesson-takeaway">Don&rsquo;t write a record off because release week was quiet.</p>
           </div>
-          <div class="finding-body">
-            <p>We compared the first 30 days of every Q2 release with at least four weeks of data. Release B had by far the biggest launch of the quarter and had <strong>lost two-thirds of that pace by week 4</strong>.</p>
-            <p>Release C logged <strong>five streams in its entire first week</strong>. A month later it was doing 7,500 a week. Across all eight releases, week-one volume did not predict which ones would still be growing a month on.</p>
-            <p>One caution: a few week-four totals were inflated by single-day spikes rather than steady growth. That's why we judge a release on its trajectory and engagement, never on one week's total. Every surge we saw in Q2 decayed. What separated the winners was the floor left behind, and that floor tracked saves and repeat listens, not launch size.</p>
-            <div class="figs">
-              <div><div class="fig">59,726</div><div class="fig-label">Week-one streams for the biggest launch, down two-thirds by week 4</div></div>
-              <div><div class="fig up">5 <span style="color:var(--faint)">to</span> 7,500</div><div class="fig-label">Release C: week-one streams, then its weekly pace a month later</div></div>
-            </div>
+          <div class="lesson-visual">
+            <p class="big-fig"><span style="color:var(--faint)">5</span><span class="to">to</span><span style="color:var(--cyan)">7,500</span></p>
+            <p class="big-label">Streams in week one, then its weekly pace a month later.</p>
           </div>
         </article>
 
         <!-- 4 -->
-        <article class="finding">
-          <div>
-            <p class="finding-no">Finding 4 of 5</p>
-            <h3 class="finding-title">Stop chasing Discover Weekly.</h3>
+        <article class="lesson">
+          <div class="lesson-copy">
+            <p class="lesson-no">04</p>
+            <h2 class="lesson-title">Stop obsessing over Discover Weekly.</h2>
+            <p>Everyone talks about Discover Weekly. Our data says Radio and Mixes did far more of the work.</p>
+            <p class="lesson-takeaway">If Radio and Mixes start picking your record up, that&rsquo;s the signal to watch.</p>
           </div>
-          <div class="finding-body">
-            <p>From May, when we started tracking where algorithmic plays come from, <strong>31.5% of all streams were algorithmic</strong>: 7.0M in total. Radio and algorithmic Mixes did the heavy lifting. Discover Weekly, the one everybody talks about, barely registered.</p>
-            <p>Editorial playlists added 2.78M streams across the quarter. Real, but algorithmic surfaces out-delivered them roughly 2.5 to 1. And the biggest gains came after Spotify gained confidence in a track, not on release day. The path we kept seeing: release, campaign exposure, listener signals build up, Radio and Mixes pick it up, sustained growth.</p>
-            <div class="bars" role="img" aria-label="Algorithmic streams by surface, May and June 2026: Algorithmic Mixes 2,257,323; Radio 1,641,277; Release Radar 249,894; Discover Weekly 64,750.">
-              <p class="bars-title">Algorithmic streams by surface, May and June. Total algorithmic: 7,021,818</p>
-              <div class="bar-row">
-                <div class="bar-meta"><span>Algorithmic Mixes</span><span>2,257,323</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
-              </div>
-              <div class="bar-row">
-                <div class="bar-meta"><span>Radio</span><span>1,641,277</span></div>
-                <div class="bar-track"><div class="bar-fill" style="width:72.7%"></div></div>
-              </div>
-              <div class="bar-row">
-                <div class="bar-meta"><span>Release Radar</span><span>249,894</span></div>
-                <div class="bar-track"><div class="bar-fill bar-fill--dim" style="width:11.1%"></div></div>
-              </div>
-              <div class="bar-row">
-                <div class="bar-meta"><span>Discover Weekly</span><span>64,750</span></div>
-                <div class="bar-track"><div class="bar-fill bar-fill--dim" style="width:2.9%"></div></div>
-              </div>
+          <div class="lesson-visual duel" role="img" aria-label="Streams in May and June: Radio and Mixes 3,898,600, Discover Weekly 64,750.">
+            <div>
+              <div class="duel-meta"><span class="duel-name">Radio + Mixes</span><span class="duel-num">3,898,600</span></div>
+              <div class="duel-track"><div class="duel-fill" style="width:100%"></div></div>
             </div>
-            <div class="figs figs--3">
-              <div><div class="fig">12x</div><div class="fig-label">Radio and Mixes streams versus Discover Weekly and Release Radar combined</div></div>
-              <div><div class="fig">&lt;1%</div><div class="fig-label">Of algorithmic volume came from Discover Weekly</div></div>
-              <div><div class="fig">2.5:1</div><div class="fig-label">Algorithmic streams versus editorial playlist streams</div></div>
+            <div>
+              <div class="duel-meta"><span class="duel-name">Discover Weekly</span><span class="duel-num">64,750</span></div>
+              <div class="duel-track"><div class="duel-fill duel-fill--small" style="width:1.7%"></div></div>
             </div>
+            <p class="duel-note">Streams across every artist we tracked, May and June 2026.</p>
           </div>
         </article>
 
         <!-- 5 -->
-        <article class="finding">
-          <div>
-            <p class="finding-no">Finding 5 of 5</p>
-            <h3 class="finding-title">Your daily numbers are mostly noise.</h3>
+        <article class="lesson">
+          <div class="lesson-copy">
+            <p class="lesson-no">05</p>
+            <h2 class="lesson-title">Your daily numbers are mostly noise.</h2>
+            <p>A bad Tuesday doesn&rsquo;t mean the record is dying. A great Wednesday doesn&rsquo;t mean it&rsquo;s breaking.</p>
+            <p>Across thousands of predictions, the direction of a record over a week told us far more than any single day.</p>
+            <a href="based-audio-q2-2026-report.pdf" class="method-link" download>Want the methodology? Read the full report</a>
           </div>
-          <div class="finding-body">
-            <p>Sahaya logs a prediction for every artist, every day, then grades it against what really happened. <strong>4,833 were graded in Q2.</strong></p>
-            <p>Weekly direction is readable: our model called whether an artist was rising, flat or falling <strong>49.2% of the time</strong>, against 40.8% for simply assuming last week would repeat. Next-day calls are a different story. Even our model only hit 15.1%, and plain "same as yesterday" beat it.</p>
-            <p>We publish that number on purpose. If a model watching your data every day can't call tomorrow, you shouldn't be making decisions off one day's rise or dip either.</p>
-            <div class="bars" role="img" aria-label="Weekly trend calls, three possible states: random guess 31.1 percent, same as last week 40.8 percent, Sahaya model 49.2 percent. Exact next-day calls: random guess 10.7 percent, Sahaya model 15.1 percent, same as yesterday 27.5 percent. 1,619 graded calls each.">
-              <p class="bars-title">Weekly trend calls: rising, flat or falling (n = 1,619)</p>
-              <div class="bar-row"><div class="bar-meta"><span>Random guess</span><span>31.1%</span></div><div class="bar-track"><div class="bar-fill bar-fill--dim" style="width:31.1%"></div></div></div>
-              <div class="bar-row"><div class="bar-meta"><span>&ldquo;Same as last week&rdquo;</span><span>40.8%</span></div><div class="bar-track"><div class="bar-fill bar-fill--dim" style="width:40.8%"></div></div></div>
-              <div class="bar-row"><div class="bar-meta"><span>Sahaya</span><span>49.2%</span></div><div class="bar-track"><div class="bar-fill bar-fill--cyan" style="width:49.2%"></div></div></div>
-              <p class="bars-title" style="margin-top:28px">Exact next-day stream calls (n = 1,619)</p>
-              <div class="bar-row"><div class="bar-meta"><span>Random guess</span><span>10.7%</span></div><div class="bar-track"><div class="bar-fill bar-fill--dim" style="width:10.7%"></div></div></div>
-              <div class="bar-row"><div class="bar-meta"><span>Sahaya</span><span>15.1%</span></div><div class="bar-track"><div class="bar-fill bar-fill--magenta" style="width:15.1%"></div></div></div>
-              <div class="bar-row"><div class="bar-meta"><span>&ldquo;Same as yesterday&rdquo;</span><span>27.5%</span></div><div class="bar-track"><div class="bar-fill bar-fill--dim" style="width:27.5%"></div></div></div>
-            </div>
-            <p class="bars-title" style="margin-top:36px">What actually tells you where a release is going</p>
-            <ul class="signals">
-              <li><span>The floor left after exposure: saves and repeat listens</span><span class="lvl lvl-high">High</span></li>
-              <li><span>Radio and Mixes pick-up</span><span class="lvl lvl-high">High</span></li>
-              <li><span>Weekly trend direction</span><span class="lvl lvl-high">High</span></li>
-              <li><span>Save rate on its own</span><span class="lvl">Medium. Supports, doesn't decide</span></li>
-              <li><span>Launch-week volume</span><span class="lvl">Low</span></li>
-              <li><span>Single-day moves</span><span class="lvl lvl-noise">Noise</span></li>
-            </ul>
-            </div>
+          <div class="lesson-visual">
+            <p class="weekday">Read the week. <span class="outline">Not the day.</span></p>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- MYTHS -->
-    <section class="section-pad rule" id="myths">
+    <!-- WHAT TO DO -->
+    <section class="section-pad rule" id="do">
       <div class="wrap">
         <div class="section-head">
-          <h2 class="h2">Three things to stop believing</h2>
-          <p class="section-intro">You'll hear all of these from other artists, from managers, from people selling you playlists. The quarter's data says otherwise.</p>
-        </div>
-        <ul class="myths">
-          <li class="myth">
-            <span class="myth-claim">The biggest first day wins</span>
-            <p>The quarter's biggest launch dropped to a third of its launch pace by week 4. A release with five first-week streams was doing 7,500 a week a month later.</p>
-          </li>
-          <li class="myth">
-            <span class="myth-claim">Discover Weekly is the goal</span>
-            <p>It delivered 64,750 streams across every artist on Sahaya in Q2. That's under 1% of the 7.0M algorithmic streams we saw. Radio and Mixes are where the volume is.</p>
-          </li>
-          <li class="myth">
-            <span class="myth-claim">Your daily numbers tell you how you're doing</span>
-            <p>Weekly direction can be read. Exact next-day calls did worse than assuming nothing changes. Reading meaning into one day is reading noise.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- TAKEAWAYS -->
-    <section class="section-pad rule" id="takeaways">
-      <div class="wrap">
-        <p class="hero-kicker">The takeaway</p>
-        <p class="takeaway-quote">Spend buys exposure. <span class="outline">Listeners decide if Spotify keeps going.</span></p>
-
-        <div class="section-head" style="margin-bottom:32px">
-          <h2 class="h2" style="font-size:clamp(36px,4.4vw,64px)">What to do with this</h2>
-          <p class="section-intro">Every paid campaign we measured lifted streams while the money was on. In every case, the paid streams themselves faded. What mattered was the handover: one campaign gave its gains back, the other seeded an unpaid Discover Weekly pickup.</p>
+          <h2 class="h2">So what should you actually do?</h2>
+          <p class="section-intro">Four things to take into your next release.</p>
         </div>
         <ul class="do-list">
-          <li>
-            <h3>Don't judge a release on week one.</h3>
-            <p>And don't kill a campaign on week-one numbers either. One of the quarter's slowest starters was doing 7,500 streams a week a month later.</p>
-          </li>
-          <li>
-            <h3>Watch for Radio and Mixes.</h3>
-            <p>Pick-up there was the most reliable early sign of sustained growth we saw all quarter.</p>
-          </li>
-          <li>
-            <h3>Read your week, not your day.</h3>
-            <p>Weekly trend direction is learnable. Daily moves are mostly noise.</p>
-          </li>
-          <li>
-            <h3>Treat paid exposure as an audition.</h3>
-            <p>Budget for it, but know that saves and repeat listens decide what survives once the spend stops.</p>
-          </li>
+          <li><h3>Don&rsquo;t panic in week one.</h3><p>Give the record time to show you what it&rsquo;s doing.</p></li>
+          <li><h3>Watch what happens after exposure.</h3><p>Saves and repeat listening matter more than a temporary spike.</p></li>
+          <li><h3>Look beyond Discover Weekly.</h3><p>Radio and Mixes can be much bigger signals.</p></li>
+          <li><h3>Read weeks, not days.</h3><p>One good or bad day doesn&rsquo;t tell you where a record is going.</p></li>
         </ul>
       </div>
     </section>
@@ -1011,16 +904,21 @@
       <div class="wrap">
         <div class="cta-grid">
           <div>
-            <h2 class="h2">Want this reading on your own music?</h2>
-            <p class="contact-lede">This is what Sahaya does for every artist on it, every day. Send us your Spotify link and we'll tell you which song has real pull and whether now is the moment to push it.</p>
+            <h2 class="h2">Want us to read your record?</h2>
+            <p class="contact-lede">Send us your music. Sahaya will look at the signals around it and we&rsquo;ll tell you whether we think it&rsquo;s ready for a push.</p>
           </div>
           <div class="hero-actions" style="margin-top:0">
-            <a href="index.html#contact" class="btn btn-solid">Send us your music</a>
-            <a href="based-audio-q2-2026-report.pdf" class="btn btn-line" download>Full report, PDF, 9 pages</a>
+            <a href="index.html#contact" class="btn btn-solid">Send your music</a>
           </div>
         </div>
 
-        <p class="method"><strong>About this report.</strong> Sahaya analyses daily Spotify for Artists data from the artists it works with to understand how releases build or lose momentum, when Spotify increases algorithmic exposure, and when to push, hold or stop spending. All figures were computed from observed data for 1 April to 30 June 2026. Identities are anonymised, and days without captured data are treated as gaps, never estimated. Where a metric was only tracked for part of the quarter, we say so: surface-level algorithmic tracking began at the start of May, so surface figures cover May and June only. The full nine-page report has the charts, methodology and anonymised release-level data.</p>
+        <div class="report-strip">
+          <div>
+            <h3>Want all the numbers and methodology?</h3>
+            <p>The full Q2 2026 report has every chart, the prediction accuracy results and anonymised release-level data. All figures come from observed daily data for 1 April to 30 June 2026. Days we didn&rsquo;t capture are left as gaps, never estimated.</p>
+          </div>
+          <a href="based-audio-q2-2026-report.pdf" class="btn btn-line" download>Download the Q2 report</a>
+        </div>
       </div>
     </section>
   </main>
