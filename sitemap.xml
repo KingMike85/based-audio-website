@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://basedaudio.co.uk/</loc>
+    <loc>https://www.basedaudio.co.uk/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://basedaudio.co.uk/live.html</loc>
+    <loc>https://www.basedaudio.co.uk/live.html</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://basedaudio.co.uk/on-record.html</loc>
+    <loc>https://www.basedaudio.co.uk/on-record.html</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://basedaudio.co.uk/based-audio-q2-2026-report.pdf</loc>
+    <loc>https://www.basedaudio.co.uk/based-audio-q2-2026-report.pdf</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

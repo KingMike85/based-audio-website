@@ -14,10 +14,10 @@
 
 ## Pages
 
-- [Sahaya for independent artists](https://basedaudio.co.uk/): how a campaign works, the channels, records backed, case studies (Zone Four: 57 to 75.4K monthly listeners; Jamilah: 92 to 14.4K monthly listeners), FAQ and contact form
-- [Sahaya Live](https://basedaudio.co.uk/live.html): paid live bookings for independent artists, and briefs for promoters and venues
-- [On Record, Q2 2026](https://basedaudio.co.uk/on-record.html): five lessons for artists from 28.1M streams, 34 new releases and 9 campaigns tracked on Sahaya between April and June 2026
+- [Sahaya for independent artists](https://www.basedaudio.co.uk/): how a campaign works, the channels, records backed, case studies (Zone Four: 57 to 75.4K monthly listeners; Jamilah: 92 to 14.4K monthly listeners), FAQ and contact form
+- [Sahaya Live](https://www.basedaudio.co.uk/live.html): paid live bookings for independent artists, and briefs for promoters and venues
+- [On Record, Q2 2026](https://www.basedaudio.co.uk/on-record.html): five lessons for artists from 28.1M streams, 34 new releases and 9 campaigns tracked on Sahaya between April and June 2026
 
 ## Research
 
-- [Q2 2026 Streaming Intelligence Report (PDF)](https://basedaudio.co.uk/based-audio-q2-2026-report.pdf): full methodology, charts and anonymised release-level data
+- [Q2 2026 Streaming Intelligence Report (PDF)](https://www.basedaudio.co.uk/based-audio-q2-2026-report.pdf): full methodology, charts and anonymised release-level data

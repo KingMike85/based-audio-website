@@ -49,4 +49,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://basedaudio.co.uk/sitemap.xml
+Sitemap: https://www.basedaudio.co.uk/sitemap.xml
