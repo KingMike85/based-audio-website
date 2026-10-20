@@ -902,6 +902,7 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">For Artists</a></li>
         <li><a href="live.html" aria-current="page">Sahaya Live</a></li>
+        <li><a href="brands.html">Brands</a></li>
         <li><a href="on-record.html">On Record</a></li>
         <li><a href="#join" class="nav-cta">Join the roster</a></li>
       </ul>
@@ -1333,13 +1334,14 @@
           status.textContent = `Check the "${l ? l.textContent.replace('(optional)', '').trim() : 'highlighted'}" field.`;
           return;
         }
-        // Combine multi-select cities into one readable field
+        // Combine each group of checkboxes into one readable field
         const data = new FormData(form);
-        const cities = data.getAll('can_play');
-        if (form.querySelector('[name="can_play"]')) {
-          data.delete('can_play');
-          data.append('can_play', cities.length ? cities.join(', ') : 'Not specified');
-        }
+        const groups = new Set([...form.querySelectorAll('input[type=checkbox]')].map(c => c.name));
+        groups.forEach(name => {
+          const vals = data.getAll(name);
+          data.delete(name);
+          data.append(name, vals.length ? vals.join(', ') : 'Not specified');
+        });
         btn.disabled = true;
         btn.textContent = 'Sending';
         status.textContent = '';
